@@ -9,3 +9,8 @@ class SpecialsMenu:public Menus
     void notifyObserver(std::string message);
 
 };
+
+void SpecialsMenu::notifyObserver(std::string message)
+{
+  
+}
