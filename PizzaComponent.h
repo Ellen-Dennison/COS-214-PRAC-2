@@ -1,3 +1,5 @@
+#ifndef PIZZACOMPONENT_H
+#define PIZZACOMPONENT_H
 #include <iostream>
 
 class PizzaComponent
@@ -11,3 +13,4 @@ class PizzaComponent
   virtual double getPrice() = 0;
 
 };
+#endif

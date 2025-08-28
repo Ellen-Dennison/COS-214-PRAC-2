@@ -1,27 +1,29 @@
 #include <iostream>
-#include "PizzaComponenet.cpp"
+#include "PizzaComponent.h"
+#include "ToppingGroup.h"
+#include "Topping.h"
 
-class ToppingGroup:public PizzaComponent
+void ToppingGroup::add(PizzaComponent* component)
 {
-   private:
-   PizzaComponent* toppings;
-
-   public:
-   void add(PizzaComponent component);
-   virtual std::string getName();
-   virtual double getPrice();
-
-};
+  
+  
 
 
-/*
-void ToppingGroup::add(PizzaComponent component)
-{
-  giving me an error it won't let me have this PizzaComponent component) as a parameter
+
+
+
+
 }
-*/
+
+
+
+
+
+
+
+
 std::string ToppingGroup::getName()
-{}
+{ return this->name; }
 
 double ToppingGroup::getPrice()
-{}
+{ return this->price; }
