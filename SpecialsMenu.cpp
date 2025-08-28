@@ -1,16 +1,14 @@
 #include <iostream>
 #include "Menus.cpp"
-#include "Customer.cpp"
-#include "Website.cpp"
+#include "Customer.h"
+#include "Website.h"
+#include "SpecialsMenu.h"
 
-class SpecialsMenu:public Menus
-{
-    public:
-    void notifyObserver(std::string message);
-
-};
 
 void SpecialsMenu::notifyObserver(std::string message)
 {
+  std::vector<Observer*> observers = this->getObservers();
+  for (int i = 0; i < observers.size(); i++) 
+  { observers[i]->update(message); }
   
 }

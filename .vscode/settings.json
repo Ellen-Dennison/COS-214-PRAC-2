@@ -4,9 +4,20 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        "Observer.h": true,
+        "PIzzaMenu.h": true,
+        "SpecialsMenu.h": true,
+        "Customer.h": true,
+        "Website.h": true
     },
-    "hide-files.files": [],
+    "hide-files.files": [
+        "Observer.h",
+        "PIzzaMenu.h",
+        "SpecialsMenu.h",
+        "Customer.h",
+        "Website.h"
+    ],
     "files.associations": {
         "array": "cpp",
         "atomic": "cpp",

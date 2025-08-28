@@ -1,28 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "Observer.cpp"
-#include "Pizza.cpp"
+#include "Observer.h"
+#include "Pizza.h"
+#include "Menus.h"
 
-class Menus
-{
-    private:
-    /* 
-    Observer* observers;
-    Pizza* Pizzas;
-    */
-    std::vector<Observer*> observers; //CHANGES
-    std::vector<Pizza*> pizzas; //CHANGES
-
-    public:
-    std::vector<Observer*> getObservers(); //CHANGES
-    void addObserver(Observer* observer);
-    void removeObserver(Observer* observer);
-    void addPizza(Pizza pizza);
-    void removePizza(Pizza pizza);
-    virtual void notifyObserver(std::string message) = 0;
-
-
-};
 
 /*____________________________________________*/
 void Menus::addObserver(Observer* observer)
@@ -45,10 +26,23 @@ void Menus::removeObserver(Observer* observer)
 std::vector<Observer*> Menus::getObservers()
 { return observers; }
 
-/* 
-void Menus::addPizza(Pizza pizza)
-{}
 
-void Menus::removePizza(Pizza pizza)
-{} 
-*/
+void Menus::addPizza(Pizza* pizza)
+{
+  
+   pizzas.push_back(pizza);
+   notifyObserver("PIZZA ADDED TO MENU");
+
+}
+
+void Menus::removePizza(Pizza* pizza)
+{
+  if( pizzas.empty() == 0 )
+   {  
+     for (auto i = pizzas.begin(); i != pizzas.end(); ++i)
+     {
+        if (*i ==pizza) { pizzas.erase(i); break; }
+     }  
+   } 
+ notifyObserver("PIZZA REMOVED TO MENU");
+} 

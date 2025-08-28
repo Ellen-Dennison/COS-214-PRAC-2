@@ -1,12 +1,7 @@
 #include <iostream>
-#include "Observer.cpp"
+#include "Observer.h"
+#include "Customer.h"
 
-
-class Customer:public Observer
-{
-  public:
-  void update(std::string message);
-};
 
 void Customer::update(std::string message)
-{ std::cout << message << std::endl; }
+{ std::cout << "CUSTOMER THERE HAS BEEN A CHANGE: " << message << std::endl; }

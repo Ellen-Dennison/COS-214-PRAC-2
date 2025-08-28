@@ -1,18 +1,14 @@
 #include <iostream>
-#include "Menus.cpp"
-#include "Customer.cpp"
-#include "Website.cpp"
+#include "Menus.h"
+#include "Customer.h"
+#include "Website.h"
+#include "PizzaMenu.h"
 
-
-class PizzaMenu:public Menus
-{
-    public:
-    void notifyObserver(std::string message);//CHANGES
-
-};
 
 void PizzaMenu::notifyObserver(std::string message)
 {
-   std::vector<Observer*> observers; 
+   std::vector<Observer*> observers = this->getObservers();
+   for (int i = 0; i < observers.size(); i++) 
+   { observers[i]->update(message); }
    
 }

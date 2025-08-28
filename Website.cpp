@@ -1,12 +1,7 @@
 #include <iostream>
-#include "Observer.cpp"
+#include "Observer.h"
+#include "Website.h"
 
-
-class Website:public Observer
-{
-  public:
-  void update(std::string message);
-};
 
 void Website::update(std::string message)
-{ std::cout << message << std::endl; }
+{ std::cout << "WEBSITE USER THERE HAS BEEN A CHANGE: " << message << std::endl; }
