@@ -3,7 +3,7 @@
 using namespace std;
 
 double StuffedCrust::getPrice(){
-  return PizzaDecorator::getPrice() + 1.0;
+  return PizzaDecorator::getPrice() + 20.0;
 }
 
 string StuffedCrust::getName(){

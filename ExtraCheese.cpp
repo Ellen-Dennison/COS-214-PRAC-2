@@ -3,7 +3,7 @@
 using namespace std;
 
 double ExtraCheese::getPrice(){
-  return PizzaDecorator::getPrice() + 2.0;
+  return PizzaDecorator::getPrice() + 12.0;
 }
 
 string ExtraCheese::getName(){
