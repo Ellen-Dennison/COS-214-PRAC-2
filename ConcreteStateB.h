@@ -1,0 +1,4 @@
+#ifndef CONCRETESTATEB_H
+#define CONCRETESTATEB_H
+
+#endif
