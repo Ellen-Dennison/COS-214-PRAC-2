@@ -57,15 +57,13 @@
         "**/.hg": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        ".gitignore": true,
         ".vscode": true,
-        "Topping.cpp": true,
-        "Topping.h": true
+        ".gitignore": true,
+        "makefile": true
     },
     "hide-files.files": [
-        ".gitignore",
         ".vscode",
-        "Topping.cpp",
-        "Topping.h"
+        ".gitignore",
+        "makefile"
     ]
 }

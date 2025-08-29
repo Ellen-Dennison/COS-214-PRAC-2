@@ -4,7 +4,7 @@
 #include "VegetableGroup.cpp"
 #include "Topping.cpp"
 #include "PizzaComponent.h"
-
+#include "BasePizza.cpp"
 int main()
 {
 
@@ -43,8 +43,8 @@ int main()
    g1->add(t1);
    g1->add(t2);
    g1->add(t3);
-   std::cout << g1->getName();
-   std::cout << g1->getPrice() << std::endl;
+   //std::cout << g1->getName();
+   //std::cout << g1->getPrice() << std::endl;
    std::cout << "----------------------------------\n";
 
    //!OTHER MEAT PIZZA
@@ -52,11 +52,17 @@ int main()
    g2->add(t1);
    g2->add(t2);
    g2->add(t4);
-   std::cout << g2->getName();
-   std::cout << g2->getPrice() << std::endl;
+   //std::cout << g2->getName();
+   //std::cout << g2->getPrice() << std::endl;
    std::cout << "----------------------------------\n";
+
+   
+   //!DECORATER
+   BasePizza* bp1 = new BasePizza;
+   bp1->setTopping(g2);
+   std::cout << bp1->getName();
 
 
    delete t1; delete t2; delete t3; delete t4;
-   delete g1; delete g2;
+   delete g1; delete g2; delete bp1;
 }
