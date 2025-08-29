@@ -1,11 +1,16 @@
-#include <iostream>
-#include "PizzaDecorator.cpp"
+#include<iostream>
+#include "ExtraCheese.h"
+using namespace std;
 
-class ExtraCheese:public PizzaDecorator
-{
-  
-  public:
-  double getPrice();
-  std::string getName();
+double ExtraCheese::getPrice(){
+  return PizzaDecorator::getPrice() + 2.0;
+}
 
-};
+string ExtraCheese::getName(){
+  return PizzaDecorator::getName() + " with extra cheese"<<endl;
+}
+
+void ExtraCheese::printPizza(){
+  cout<<"Name: "<<getName()<<endl;
+  cout<<"Price: "<<getPrice()<<endl;
+}

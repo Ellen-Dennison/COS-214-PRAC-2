@@ -1,16 +1,20 @@
-#include <iostream>
-#include "Pizza.cpp"
+#include<iostream>
+#include "PizzaDecorator.h"
 
+double PizzaDecorator::getPrice(){
+    if(pizza){
+        return pizza.getPrice();
+    }
+}
 
-class PizzaDecorator:public Pizza
-{
-  
-    private:
-    Pizza pizza;
+std::string PizzaDecorator::getName(){
+    if(pizza){
+        return pizza.getName();
+    }
+}
 
-    public:
-    virtual double getPrice() = 0;
-    virtual std::string getName() = 0;
-
-};
-
+void PizzaDecorator::printPizza(){
+    if(pizza){
+        return pizza.printPizza();
+    }
+}

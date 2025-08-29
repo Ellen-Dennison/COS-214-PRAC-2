@@ -1,15 +1,7 @@
+#include "Pizza.h"
 #include <iostream>
+using namespace std;
 
-class Pizza
-{
-  public:
-  virtual double getPrice() = 0;
-  virtual std::string GetName() = 0;
-  void printPizza();
-
-};
-
-void Pizza::printPizza()
-{
-
+void Pizza::printPizza(){
+  cout<<"Default Pizza print"<<endl;
 }

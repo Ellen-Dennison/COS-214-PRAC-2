@@ -1,18 +1,20 @@
 #include <iostream>
-#include "Pizza.cpp"
-#include "PizzaComponent.cpp"
+#include "Pizza.h"
+#include "PizzaComponent.h"
+#include "BasePizza.h"
+#include<string>
+using namespace std;
 
 
-class BasePizza:public Pizza
-{
-  
-    private:
-    PizzaComponent toppings;
+double BasePizza::getPrice(){
+    return toppings.getPrice();
+}
 
-    public:
-    double getPrice();
-    std::string getName();
+string BasePizza::getName(){
+    return toppings.getName();
+}
 
-
-};
-
+void BasePizza::printPizza(){
+    cout<<"Name: "<<getName()<<endl;
+    cout<<"Price: "<<getPrice()<<endl;
+}
