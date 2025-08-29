@@ -1,16 +1,8 @@
-#include <iostream>
-#include "DiscountStrategy.cpp"
+#include "BulkDiscount.h"
 
-
-class BulkDiscount:public DiscountStrategy
-{
-
-  public:
-  double applyDiscount();
-
-};
-
-double BulkDiscount::applyDiscount()
-{
-
+double BulkDiscount::applyDiscount(){
+  if(numPizza >= 5){
+    return pizza->getPrice()*0.9*numPizza;
+  }
+  return pizza->getPrice()*numPizza;
 }

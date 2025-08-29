@@ -1,16 +1,5 @@
-#include <iostream>
-#include "DiscountStrategy.cpp"
+#include "RegularPrice.h"
 
-
-class RegularPrice:public DiscountStrategy
-{
-
-  public:
-  double applyDiscount();
-
-};
-
-double RegularPrice::applyDiscount()
-{
-
+double RegularPrice::applyDiscount(){
+  return pizza->getPrice() * 1.0*numPizza;
 }
