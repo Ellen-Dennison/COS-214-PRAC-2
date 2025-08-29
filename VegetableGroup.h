@@ -4,7 +4,13 @@
 #include "ToppingGroup.h"
 
 class VegetableGroup:public ToppingGroup
-{};
+{
+
+   public:
+   virtual std::string getName();//CHANGES
+   virtual double getPrice();//CHANGES
+
+};
 
 
 #endif

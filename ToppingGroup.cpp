@@ -9,8 +9,6 @@ void ToppingGroup::add(PizzaComponent* component)
 }
 
 
-
-
 std::string ToppingGroup::getName()
 {    
     std::string rtrn = "Here is your pizza\n";

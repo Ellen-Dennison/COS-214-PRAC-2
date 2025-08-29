@@ -59,17 +59,13 @@
         "**/Thumbs.db": true,
         ".gitignore": true,
         ".vscode": true,
-        "MeatGroup.cpp": true,
-        "MeatGroup.h": true,
-        "VegetableGroup.cpp": true,
-        "VegetableGroup.h": true
+        "Topping.cpp": true,
+        "Topping.h": true
     },
     "hide-files.files": [
         ".gitignore",
         ".vscode",
-        "MeatGroup.cpp",
-        "MeatGroup.h",
-        "VegetableGroup.cpp",
-        "VegetableGroup.h"
+        "Topping.cpp",
+        "Topping.h"
     ]
 }

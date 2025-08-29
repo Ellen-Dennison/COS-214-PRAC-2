@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ToppingGroup.cpp"
+#include "MeatGroup.cpp"
 #include "Topping.cpp"
 #include "PizzaComponent.h"
 
@@ -33,12 +34,12 @@ int main()
    t3->setPrice(5);
     
    //!OTHER
-   ToppingGroup* g1 = new ToppingGroup;
+   ToppingGroup* g1 = new MeatGroup;
    g1->add(t1);
    g1->add(t2);
    g1->add(t3);
    std::cout << g1->getName() << std::endl;
-   std::cout << g1->getPrice() << std::endl;
+   //std::cout << g1->getPrice() << std::endl;
 
    delete t1; delete t2; delete t3;
    delete g1;
