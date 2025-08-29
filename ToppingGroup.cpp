@@ -14,8 +14,11 @@ std::string ToppingGroup::getName()
     std::string rtrn = "Here is your pizza\n";
     for (int i = 0; i < toppings.size(); i++)
     {
-      rtrn += toppings[i]->getName() + " ";
+      rtrn += toppings[i]->getName();
+      if (i != toppings.size()-1)
+      { rtrn += ", "; }
     }
+    rtrn += "\n";
     return rtrn;
 }
 
@@ -26,7 +29,7 @@ double ToppingGroup::getPrice()
   for (int i = 0; i < toppings.size(); i++)
   {
     rtrn += toppings[i]->getPrice();
-  } 
+  }
   return rtrn;
 }
 

@@ -9,7 +9,7 @@ class MeatGroup:public ToppingGroup
     
     public:
     virtual std::string getName();//CHANGES
-    virtual double getPrice();//CHANGES
+
     
 };
 

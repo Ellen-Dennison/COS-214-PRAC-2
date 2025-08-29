@@ -8,7 +8,3 @@ std::string MeatGroup::getName()
    return rtrn;
 }
 
-double MeatGroup::getPrice()
-{ 
-  return 0.0;
-}
