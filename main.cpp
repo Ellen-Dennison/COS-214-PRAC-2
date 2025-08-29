@@ -6,5 +6,10 @@
 
 int main()
 {
-
+   /* 
+    useing the observer 
+    drafting message
+    return message
+    sending message
+   */
 }
