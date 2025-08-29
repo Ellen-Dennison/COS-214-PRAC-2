@@ -3,7 +3,7 @@
 
 std::string MeatGroup::getName()
 {    
-   std::string rtrn = "Meat Pizza:";
+   std::string rtrn = "Meat Pizza\n";
    rtrn += ToppingGroup::getName();
    return rtrn;
 }
