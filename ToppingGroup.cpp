@@ -5,25 +5,32 @@
 
 void ToppingGroup::add(PizzaComponent* component)
 {
-  
-  
-
-
-
-
-
-
+  toppings.push_back(component);
 }
 
 
 
 
-
-
-
-
 std::string ToppingGroup::getName()
-{ return this->name; }
+{    
+    std::string rtrn = "Here is your pizza\n";
+    for (int i = 0; i < toppings.size(); i++)
+    {
+      rtrn += toppings[i]->getName() + " ";
+    }
+    return rtrn;
+}
 
 double ToppingGroup::getPrice()
-{ return this->price; }
+{ 
+  double rtrn;
+  std::cout <<"Here is your total:\n";
+  for (int i = 0; i < toppings.size(); i++)
+  {
+    rtrn += toppings[i]->getPrice();
+  } 
+  return rtrn;
+}
+
+std::vector <PizzaComponent*> ToppingGroup::getToppings()
+{ return toppings; }
