@@ -31,8 +31,8 @@ void Menus::addPizza(Pizza* pizza)
 {
   
    pizzas.push_back(pizza);
-   notifyObserver("PIZZA ADDED TO MENU");
-
+   //notifyObserver("PIZZA ADDED TO MENU");
+   
 }
 
 void Menus::removePizza(Pizza* pizza)
@@ -44,5 +44,6 @@ void Menus::removePizza(Pizza* pizza)
         if (*i ==pizza) { pizzas.erase(i); break; }
      }  
    } 
- notifyObserver("PIZZA REMOVED TO MENU");
+  //notifyObserver("PIZZA REMOVED TO MENU");
+
 } 

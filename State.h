@@ -3,7 +3,7 @@
 
 class State
 {
-  
+   
 };
 
 #endif
