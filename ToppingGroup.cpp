@@ -12,12 +12,14 @@
 
 void ToppingGroup::add(PizzaComponent* component)
 {
+  if( newState->getState() != "final" )
+  { toppings.push_back(component);}
   
-  toppings.push_back(component);
 }
 
 void ToppingGroup::drafting()
 {  
+  
   if(newState != nullptr)
   { delete newState; }
   newState = new DraftState;

@@ -11,7 +11,7 @@ class DraftState:public State
     std::string state;
     
     public:
-    void ChangeState(std::string state);
+    std::string getState(std::string state);
    
 };
 

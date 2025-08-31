@@ -1,8 +1,10 @@
 #include <iostream>
 #include "ReviewState.h"
 
-void ReviewState::ChangeState(std::string state)
+std::string ReviewState::getState(std::string state)
 {
     
   std::cout << "reviewing\n";
+  this->state = state;
+  return state;
 }

@@ -1,8 +1,9 @@
 #include <iostream>
 #include "FinalState.h"
 
-void FinalState::ChangeState(std::string state)
+std::string FinalState::getState(std::string state)
 {  
     std::cout << "done\n";
+    this->state = state;
 
 }

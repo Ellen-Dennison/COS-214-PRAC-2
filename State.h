@@ -6,7 +6,7 @@ class State
 {
     
     public:
-    virtual void ChangeState(std::string state) = 0;
+    virtual std::string getState(std::string state) = 0;
 
 };
 

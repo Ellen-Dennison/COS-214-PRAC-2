@@ -2,8 +2,9 @@
 #include "DraftState.h"
 #include "ReviewState.h"
 
-void DraftState::ChangeState(std::string state)
+std::string DraftState::getState(std::string state)
 {
    std::cout << "drafting\n";
+   this->state = state;
 }
 
