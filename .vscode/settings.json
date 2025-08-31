@@ -59,11 +59,30 @@
         "**/Thumbs.db": true,
         ".vscode": true,
         ".gitignore": true,
-        "makefile": true
+        "makefile": true,
+        "BasePizza.cpp": true,
+        "BasePizza.h": true,
+        "MeatGroup.cpp": true,
+        "MeatGroup.h": true,
+        "Pizza.h": true,
+        "PizzaComponent.h": true,
+        "Topping.h": true,
+        "VegetableGroup.cpp": true,
+        "VegetableGroup.h": true
     },
     "hide-files.files": [
         ".vscode",
         ".gitignore",
-        "makefile"
+        "makefile",
+        "BasePizza.cpp",
+        "BasePizza.h",
+        "MeatGroup.cpp",
+        "MeatGroup.h",
+        "Pizza.h",
+        "PizzaComponent.h",
+        "Topping.h",
+        "VegetableGroup.cpp",
+        "VegetableGroup.h",
+        "Topping.cpp"
     ]
 }

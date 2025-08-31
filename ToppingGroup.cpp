@@ -3,9 +3,42 @@
 #include "ToppingGroup.h"
 #include "Topping.h"
 
+#include "BasePizza.cpp"
+#include "DraftState.cpp"
+#include "ReviewState.cpp"
+#include "FinalState.cpp"
+
+
+
 void ToppingGroup::add(PizzaComponent* component)
 {
+  
   toppings.push_back(component);
+}
+
+void ToppingGroup::drafting()
+{  
+  if(newState != nullptr)
+  { delete newState; }
+  newState = new DraftState;
+
+
+}
+
+void ToppingGroup::reviewing()
+{  
+  if(newState != nullptr)
+  { delete newState; }
+
+  newState = new ReviewState;
+}
+
+void ToppingGroup::final()
+{  
+  if(newState != nullptr)
+  { delete newState; }
+
+  newState = new FinalState;
 }
 
 
@@ -35,3 +68,11 @@ double ToppingGroup::getPrice()
 
 std::vector <PizzaComponent*> ToppingGroup::getToppings()
 { return toppings; }
+
+
+ToppingGroup::~ToppingGroup()
+{
+  if(newState != nullptr)
+  { delete newState; }
+
+}
