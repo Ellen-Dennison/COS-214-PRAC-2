@@ -56,26 +56,7 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        ".vscode": true,
-        ".gitignore": true,
-        "makefile": true,
-        "BasePizza.cpp": true,
-        "BasePizza.h": true,
-        "Pizza.h": true,
-        "PizzaComponent.h": true,
-        "Topping.h": true,
-        "Topping.cpp": true
+        "**/Thumbs.db": true
     },
-    "hide-files.files": [
-        ".vscode",
-        ".gitignore",
-        "makefile",
-        "BasePizza.cpp",
-        "BasePizza.h",
-        "Pizza.h",
-        "PizzaComponent.h",
-        "Topping.h",
-        "Topping.cpp"
-    ]
+    "hide-files.files": []
 }
