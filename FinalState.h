@@ -1,7 +1,5 @@
 #ifndef FINALSTATE_H
 #define FINALSTATE_H
-
-#include <iostream>
 #include "State.h"
 #include "ToppingGroup.h"
 #include "Topping.h"
