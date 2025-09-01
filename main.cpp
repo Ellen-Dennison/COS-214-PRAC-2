@@ -4,7 +4,9 @@
 #include "VegetableGroup.cpp"
 #include "Topping.cpp"
 #include "PizzaComponent.h"
-
+#include "DraftState.cpp"
+#include "ReviewState.cpp"
+#include "FinalState.cpp"
 
 int main()
 {
@@ -41,7 +43,6 @@ int main()
     
    //!OTHER VEGGIE PIZZA
    ToppingGroup* g1 = new VegetableGroup;
-   g1->drafting();
    g1->add(t1);
    g1->add(t2);
    g1->add(t3);
@@ -50,7 +51,31 @@ int main()
    
 
    
+   std::cout << "\n-----------------STATE TEST-----------------\n";
+   
+   //!STATE TEST
+   State* newState = new DraftState;
+   ToppingGroup* g3 = new VegetableGroup;
+   g3->setState(newState);
+   g3->handle(t1);
+   g3->handle(t2);
+   g3->handle(t3);
+   std::cout << g3->getName();
+   
    std::cout << "\n----------------------------------\n";
+   g3->setState(new ReviewState);
+   g3->handle(t1);
+
+   std::cout << "\n----------------------------------\n";
+
+   g3->setState(new FinalState);
+   g3->handle(t1);
+    
+   std::cout << "\n----------------------------------\n";
+   g3->setState(newState);
+   g3->add(t1);
+   std::cout << g3->getName();
+
 
    /*OTHER MEAT PIZZA
    ToppingGroup* g2 = new MeatGroup;
@@ -70,5 +95,6 @@ int main()
 
    delete t1; delete t2; delete t3; delete t4;
    delete g1; //delete g2; delete bp1; delete ds1;
+   delete newState; //delete g3;
 
 }

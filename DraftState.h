@@ -1,17 +1,19 @@
 #ifndef DRAFTSTATE_H
 #define DRAFTSTATE_H
 
-#include "State.h"
 #include <iostream>
+#include "State.h"
+
 
 class DraftState:public State
 {
 
     private:
-    std::string state;
+    ToppingGroup* Toppings;
     
     public:
-    std::string getState(std::string state);
+    void handle(ToppingGroup* Toppings, Topping* newTopping);
+    ~DraftState();
    
 };
 

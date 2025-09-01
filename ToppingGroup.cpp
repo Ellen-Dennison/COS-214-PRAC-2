@@ -1,47 +1,17 @@
 #include <iostream>
-#include "PizzaComponent.h"
 #include "ToppingGroup.h"
-#include "Topping.h"
-
-#include "BasePizza.cpp"
-#include "DraftState.cpp"
-#include "ReviewState.cpp"
-#include "FinalState.cpp"
-
 
 
 void ToppingGroup::add(PizzaComponent* component)
-{
-  if( newState->getState() != "final" )
-  { toppings.push_back(component);}
-  
-}
+{ toppings.push_back(component); }
 
-void ToppingGroup::drafting()
+void ToppingGroup::setState(State* newState)
 {  
-  
-  if(newState != nullptr)
-  { delete newState; }
-  newState = new DraftState;
-
-
+  this->newState = newState;
 }
 
-void ToppingGroup::reviewing()
-{  
-  if(newState != nullptr)
-  { delete newState; }
-
-  newState = new ReviewState;
-}
-
-void ToppingGroup::final()
-{  
-  if(newState != nullptr)
-  { delete newState; }
-
-  newState = new FinalState;
-}
+void ToppingGroup::handle(Topping* newTopping)
+{ newState->handle(this ,newTopping); }
 
 
 std::string ToppingGroup::getName()
@@ -68,13 +38,14 @@ double ToppingGroup::getPrice()
   return rtrn;
 }
 
-std::vector <PizzaComponent*> ToppingGroup::getToppings()
-{ return toppings; }
+std::vector <PizzaComponent*>* ToppingGroup::getToppings()
+{ return &toppings; }
 
 
 ToppingGroup::~ToppingGroup()
 {
-  if(newState != nullptr)
+  
+  if(newState != NULL)
   { delete newState; }
 
 }

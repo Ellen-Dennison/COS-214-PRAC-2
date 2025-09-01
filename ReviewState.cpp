@@ -1,10 +1,11 @@
 #include <iostream>
 #include "ReviewState.h"
 
-std::string ReviewState::getState(std::string state)
+
+void ReviewState::handle(ToppingGroup* Toppings ,Topping* newTopping)
 {
-    
-  std::cout << "reviewing\n";
-  this->state = state;
-  return state;
+  std::cout << "YOU ARE NOW REVIEWING YOUR ORDER\n";
+  std::cout << Toppings->getName();
+
 }
+

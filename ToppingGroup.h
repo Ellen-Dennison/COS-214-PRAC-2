@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "PizzaComponent.h"
+#include "Topping.h"
 #include "State.h"
 
 class ToppingGroup:public PizzaComponent
@@ -15,13 +16,13 @@ class ToppingGroup:public PizzaComponent
 
    public:
    void add(PizzaComponent* component);//CHANGES
-   std::vector <PizzaComponent*> getToppings();//CHANGES
+   std::vector <PizzaComponent*>* getToppings();//CHANGES
    virtual std::string getName();//CHANGES
    virtual double getPrice();//CHANGES
-   void drafting();//CHANGES
-   void reviewing();//CHANGES
-   void final();//CHANGES
-   ~ToppingGroup();
+
+   void setState(State* newState);//CHANGES
+   void handle(Topping* newTopping);//CHANGES
+   ~ToppingGroup();//CHANGES
 
 };
 #endif

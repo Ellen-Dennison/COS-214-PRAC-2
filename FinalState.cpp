@@ -1,9 +1,12 @@
 #include <iostream>
 #include "FinalState.h"
 
-std::string FinalState::getState(std::string state)
-{  
-    std::cout << "done\n";
-    this->state = state;
-
+void FinalState::handle(ToppingGroup* Toppings,Topping* newTopping)
+{
+    std::cout << "YOU CAN NO LONGER CHANGE YOUR ORDER NOW\n";
+    std::cout << Toppings->getName();
+    std::cout << Toppings->getPrice();      
+   Toppings->getToppings()->clear();
 }
+
+

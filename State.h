@@ -1,13 +1,14 @@
 #ifndef STATE_H
 #define STATE_H
 #include <iostream>
+class ToppingGroup; 
+class Topping;
+
 
 class State
 {
-    
     public:
-    virtual std::string getState(std::string state) = 0;
-
+    virtual void handle(ToppingGroup* Toppings, Topping* newTopping) = 0;
 };
 
 #endif

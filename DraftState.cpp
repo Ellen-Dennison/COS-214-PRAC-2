@@ -1,10 +1,11 @@
 #include <iostream>
 #include "DraftState.h"
-#include "ReviewState.h"
 
-std::string DraftState::getState(std::string state)
+
+void DraftState::handle(ToppingGroup* Toppings ,Topping* newTopping)
 {
-   std::cout << "drafting\n";
-   this->state = state;
+   std::cout << "YOU ARE NOW DRAFTING A NEW ORDER\n";
+   Toppings->add(newTopping);
 }
+
 

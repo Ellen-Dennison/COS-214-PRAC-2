@@ -1,17 +1,20 @@
 #ifndef REVIEWSTATE_H
 #define REVIEWSTATE_H
 
-#include "State.h"
 #include <iostream>
+#include "State.h"
+#include "ToppingGroup.h"
+#include "Topping.h"
 
 class ReviewState:public State
 { 
 
     private:
-    std::string state;
+    ToppingGroup* Toppings;
     
     public:
-    std::string getState(std::string state);
+    void handle(ToppingGroup* Toppings,Topping* newTopping);
+    ~ReviewState();
    
 };
 
