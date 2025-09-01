@@ -8,11 +8,15 @@
 #include "PizzaDecorator.cpp"
 #include "ExtraCheese.cpp"
 #include "Pizza.cpp"
+#include "DraftState.cpp"
+#include "ReviewState.cpp"
+#include "FinalState.cpp"
+
 
 int main()
 {
 
-    /* 
+     /* 
      Cheese 15
      Dough 10
      Tomato Sauce 5
@@ -49,48 +53,87 @@ int main()
    g1->add(t3);
    std::cout << g1->getName();
    std::cout << g1->getPrice() << std::endl;
-   std::cout << "----------------------------------\n";
+   
+
+   
+   std::cout << "\n-----------------STATE TEST-----------------\n";
+   
+   //!STATE TEST
+   State* newState = new DraftState;
+   ToppingGroup* g3 = new VegetableGroup;
+   g3->setState(newState);
+   g3->handle(t1);
+   g3->handle(t2);
+   g3->handle(t3);
+   std::cout << g3->getName();
+   
+   std::cout << "\n----------------------------------\n";
+   g3->setState(new ReviewState);
+   g3->handle(t1);
+
+   std::cout << "\n----------------------------------\n";
+
+   g3->setState(new FinalState);
+   g3->handle(t1);
+    
+   std::cout << "\n----------------------------------\n";
+   g3->setState(newState);
+   g3->add(t1);
+   std::cout << g3->getName();
+
 
    //!OTHER MEAT PIZZA
    ToppingGroup* g2 = new MeatGroup;
    g2->add(t1);
    g2->add(t2);
    g2->add(t4);
-   std::cout << g2->getName();
-   std::cout << g2->getPrice() << std::endl;
+   //std::cout << g2->getName();
+   //std::cout << g2->getPrice() << std::endl;
    std::cout << "----------------------------------\n";
+   
+
+   delete t1; delete t2; delete t3; delete t4;
+   delete g1; delete g2; //delete bp1; delete ds1;
+   delete newState; //delete g3;
 
 
    
 
-   //Testing Decorator functions
-   ToppingGroup* tg= new VegetableGroup;
-   tg->add(t1);
-   tg->add(t2);
-   tg->add(t3);
+    /* //Testing Decorator functions
+    ToppingGroup* tg= new VegetableGroup;
+    tg->add(t1);
+    tg->add(t2);
+    tg->add(t3);
 
-   BasePizza *base = new BasePizza;
-   base->setTopping(tg);
+    BasePizza *base = new BasePizza;
+    base->setTopping(tg);
 
-   std::cout<<base->getPrice()<<std::endl;
-   std::cout<<base->getName()<<std::endl;
+    std::cout<<base->getPrice()<<std::endl;
+    std::cout<<base->getName()<<std::endl;
 
-   ExtraCheese *cheesePizza = new ExtraCheese;
-   PizzaDecorator *pizzaDecorator = new PizzaDecorator;
-   pizzaDecorator->setPizza(base);
+    ExtraCheese *cheesePizza = new ExtraCheese;
+    PizzaDecorator *pizzaDecorator = new PizzaDecorator;
+    pizzaDecorator->setPizza(base);
 
-   std::cout<<"Pizza with cheese\n";
-   std::cout<<cheesePizza->getPrice()<<std::endl;
-   std::cout<<cheesePizza->getName()<<std::endl;
+    std::cout<<"Pizza with cheese\n";
+    std::cout<<cheesePizza->getPrice()<<std::endl;
+    std::cout<<cheesePizza->getName()<<std::endl;
 
-   delete cheesePizza; delete pizzaDecorator;
-   delete tg;
-   delete base;
-   
-  //TESTING STRATEGY!
-  //PizzaOrder order1 = 
+    delete cheesePizza; delete pizzaDecorator;
+    delete tg;
+    delete base;
+    
+    //TESTING STRATEGY!
+    //PizzaOrder order1 = 
 
-  delete t1; delete t2; delete t3; delete t4;
-   delete g1; delete g2;
-   return 0;
+    delete t1; delete t2; delete t3; delete t4;
+    delete g1; delete g2;*/
+    
+
+
+
+  return 0;
+
+
+  
 }

@@ -62,13 +62,10 @@
         "makefile": true,
         "BasePizza.cpp": true,
         "BasePizza.h": true,
-        "MeatGroup.cpp": true,
-        "MeatGroup.h": true,
         "Pizza.h": true,
         "PizzaComponent.h": true,
         "Topping.h": true,
-        "VegetableGroup.cpp": true,
-        "VegetableGroup.h": true
+        "Topping.cpp": true
     },
     "hide-files.files": [
         ".vscode",
@@ -76,13 +73,9 @@
         "makefile",
         "BasePizza.cpp",
         "BasePizza.h",
-        "MeatGroup.cpp",
-        "MeatGroup.h",
         "Pizza.h",
         "PizzaComponent.h",
         "Topping.h",
-        "VegetableGroup.cpp",
-        "VegetableGroup.h",
         "Topping.cpp"
     ]
 }
