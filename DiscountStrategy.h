@@ -5,7 +5,7 @@
 class DiscountStrategy
 {
   public:
-          virtual double applyDiscount() = 0;
+  virtual double applyDiscount() = 0;
 };
 
 #endif
