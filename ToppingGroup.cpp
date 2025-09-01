@@ -1,12 +1,17 @@
 #include <iostream>
-#include "PizzaComponent.h"
 #include "ToppingGroup.h"
-#include "Topping.h"
+
 
 void ToppingGroup::add(PizzaComponent* component)
-{
-  toppings.push_back(component);
+{ toppings.push_back(component); }
+
+void ToppingGroup::setState(State* newState)
+{  
+  this->newState = newState;
 }
+
+void ToppingGroup::handle(Topping* newTopping)
+{ newState->handle(this ,newTopping); }
 
 
 std::string ToppingGroup::getName()
@@ -33,5 +38,14 @@ double ToppingGroup::getPrice()
   return rtrn;
 }
 
-std::vector <PizzaComponent*> ToppingGroup::getToppings()
-{ return toppings; }
+std::vector <PizzaComponent*>* ToppingGroup::getToppings()
+{ return &toppings; }
+
+
+ToppingGroup::~ToppingGroup()
+{
+  
+  if(newState != NULL)
+  { delete newState; }
+
+}
