@@ -1,8 +1,6 @@
 #include "PizzaOrder.h"
 
-PizzaOrder::PizzaOrder(Pizza* p) : order(p) {}
-
-PizzaOrder::PizzaOrder(DiscountStrategy* strategy){
+PizzaOrder::PizzaOrder(Pizza* p, DiscountStrategy* strategy) : order(p) {
     this->strategy = strategy;
 }
 

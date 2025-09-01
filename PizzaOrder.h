@@ -7,8 +7,7 @@ class PizzaOrder{
             Pizza *pizza;
             DiscountStrategy *strategy;
     public:
-            PizzaOrder(Pizza* p);
-            PizzaOrder(Discount* strategy);
+            PizzaOrder(Pizza* p, DiscountStrategy* strategy);
             void printPizza();
             double getPrice();
             std::string getName();

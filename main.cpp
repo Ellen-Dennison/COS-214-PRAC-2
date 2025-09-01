@@ -14,7 +14,9 @@
 #include "Website.cpp"
 #include "Customer.cpp"
 #include "Menus.cpp"
-#include "Pizza.cpp"
+#include "Pizza.h"
+#include "StuffedCrust.cpp"
+#include "PizzaOrder.cpp"
 
 
 
@@ -121,36 +123,42 @@ int main()
     //delete pineapple;
  
 
-    /* //Testing Decorator functions
+    //Testing Decorator functions
     ToppingGroup* tg= new VegetableGroup;
     tg->add(t1);
     tg->add(t2);
     tg->add(t3);
 
-    BasePizza *base = new BasePizza;
-    base->setTopping(tg);
+    BasePizza *base = new BasePizza;//base pizza has toppings
+   base->setTopping(tg);
+   
+   PizzaOrder *order1 = new PizzaOrder(new ExtraCheese(new StuffedCrust(base)), new Regular price);
+   std::cout<<"Price of Decorated Pizza: "<<order1->getPrice()<<endl;
+   std::cout<<"Name of Decorated Pizza: "<<order1->getName()<<endl;
+   std::cout<<"printing pizza: "<<endl;
 
-    std::cout<<base->getPrice()<<std::endl;
-    std::cout<<base->getName()<<std::endl;
+   order1->printPizza();
+   std::cout<<"-----------------------------------------------------------------------------------------\n";
 
-    ExtraCheese *cheesePizza = new ExtraCheese;
-    PizzaDecorator *pizzaDecorator = new PizzaDecorator;
-    pizzaDecorator->setPizza(base);
+   
+   //Testing the Strategy design pattern
+   double priceA = order1->applyDiscount();
 
-    std::cout<<"Pizza with cheese\n";
-    std::cout<<cheesePizza->getPrice()<<std::endl;
-    std::cout<<cheesePizza->getName()<<std::endl;
+   PizzaOrder *order2 = new PizzaOrder(new ExtraCheese(base), BulkDiscount);
+   double orderPrice = order2->getPrice()*3;
+   double priceB = orderPrice->
+   std::cout<<"Prices after discount has been applied:/n";
+   std::cout<<"-----------------------------------------------------------------------------------------------\n";
+   std::cout<<"After regular price discount: "<<priceA<<std::endl;
+   std::cout<<"After bulk discount: "<<priceB<<std::endl;
+   std::cout<<"After family discount: "<<priceC<<std::endl;
+   
+   delete order1;
+   delete orders;
+   delete tg; delete base;
 
-    delete cheesePizza; delete pizzaDecorator;
-    delete tg;
-    delete base;
-    
-    //TESTING STRATEGY!
-    //PizzaOrder order1 = 
-
-    delete t1; delete t2; delete t3; delete t4;
-    delete g1; delete g2;*/
-    
+  delete t1; delete t2; delete t3; delete t4;
+   delete g1; delete g2;
 
 
 
