@@ -1,5 +1,6 @@
 #include<iostream>
 #include "ExtraCheese.h"
+#include<string>
 using namespace std;
 
 double ExtraCheese::getPrice(){
@@ -7,7 +8,8 @@ double ExtraCheese::getPrice(){
 }
 
 string ExtraCheese::getName(){
-  return PizzaDecorator::getName() + " with extra cheese"<<endl;
+  std::string result = PizzaDecorator::getName() + " with extra cheese\n";
+  return result;
 }
 
 void ExtraCheese::printPizza(){

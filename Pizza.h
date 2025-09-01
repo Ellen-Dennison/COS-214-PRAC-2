@@ -8,3 +8,5 @@ class Pizza{
             virtual std::string getName() = 0;
             void printPizza();
 };
+
+#endif

@@ -4,6 +4,10 @@
 #include "VegetableGroup.cpp"
 #include "Topping.cpp"
 #include "PizzaComponent.h"
+#include "BasePizza.cpp"
+#include "PizzaDecorator.cpp"
+#include "ExtraCheese.cpp"
+#include "Pizza.cpp"
 
 int main()
 {
@@ -57,6 +61,36 @@ int main()
    std::cout << "----------------------------------\n";
 
 
-   delete t1; delete t2; delete t3; delete t4;
+   
+
+   //Testing Decorator functions
+   ToppingGroup* tg= new VegetableGroup;
+   tg->add(t1);
+   tg->add(t2);
+   tg->add(t3);
+
+   BasePizza *base = new BasePizza;
+   base->setTopping(tg);
+
+   std::cout<<base->getPrice()<<std::endl;
+   std::cout<<base->getName()<<std::endl;
+
+   ExtraCheese *cheesePizza = new ExtraCheese;
+   PizzaDecorator *pizzaDecorator = new PizzaDecorator;
+   pizzaDecorator->setPizza(base);
+
+   std::cout<<"Pizza with cheese\n";
+   std::cout<<cheesePizza->getPrice()<<std::endl;
+   std::cout<<cheesePizza->getName()<<std::endl;
+
+   delete cheesePizza; delete pizzaDecorator;
+   delete tg;
+   delete base;
+   
+  //TESTING STRATEGY!
+  //PizzaOrder order1 = 
+
+  delete t1; delete t2; delete t3; delete t4;
    delete g1; delete g2;
+   return 0;
 }

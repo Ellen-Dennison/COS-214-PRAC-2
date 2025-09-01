@@ -7,11 +7,12 @@ class BasePizza:public Pizza
 {
   
     private:
-    PizzaComponent toppings;
+    PizzaComponent* toppings;
 
     public:
     double getPrice();
     std::string getName();
     void printPizza();
+    void setTopping(PizzaComponent* toppings);
 };
 #endif

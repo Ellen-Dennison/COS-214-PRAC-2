@@ -2,19 +2,18 @@
 #include "PizzaDecorator.h"
 
 double PizzaDecorator::getPrice(){
-    if(pizza){
-        return pizza.getPrice();
-    }
+        return pizza->getPrice();
 }
 
 std::string PizzaDecorator::getName(){
-    if(pizza){
-        return pizza.getName();
-    }
+   
+        return pizza->getName();
 }
 
 void PizzaDecorator::printPizza(){
-    if(pizza){
-        return pizza.printPizza();
-    }
+        return pizza->printPizza();
+}
+
+void PizzaDecorator::setPizza(Pizza* pizza){
+    this->pizza = pizza;
 }

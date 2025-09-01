@@ -4,8 +4,11 @@
 
 class DiscountStrategy
 {
+  private:
+          int numPizza;
+          Pizza *pizza;
   public:
-  virtual double applyDiscount() = 0;
+          virtual double applyDiscount() = 0;
 };
 
 #endif
