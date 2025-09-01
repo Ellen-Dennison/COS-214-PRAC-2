@@ -1,7 +1,8 @@
-#include<iostream>
 #include "ExtraCheese.h"
 #include<string>
 using namespace std;
+
+ExtraCheese::ExtraCheese(Pizza* p) : PizzaDecorator(p){}
 
 double ExtraCheese::getPrice(){
   return PizzaDecorator::getPrice() + 12.0;

@@ -7,7 +7,9 @@
 #include "BasePizza.cpp"
 #include "PizzaDecorator.cpp"
 #include "ExtraCheese.cpp"
-#include "Pizza.cpp"
+#include "Pizza.h"
+#include "StuffedCrust.cpp"
+#include "PizzaOrder.cpp"
 
 int main()
 {
@@ -64,31 +66,49 @@ int main()
    
 
    //Testing Decorator functions
+   std::cout<<"Testing the decorator pattern\n"<<endl;
    ToppingGroup* tg= new VegetableGroup;
    tg->add(t1);
    tg->add(t2);
    tg->add(t3);
 
-   BasePizza *base = new BasePizza;
+  
+   BasePizza *base = new BasePizza;//base pizza has toppings
    base->setTopping(tg);
-
-   std::cout<<base->getPrice()<<std::endl;
-   std::cout<<base->getName()<<std::endl;
-
-   ExtraCheese *cheesePizza = new ExtraCheese;
-   PizzaDecorator *pizzaDecorator = new PizzaDecorator;
-   pizzaDecorator->setPizza(base);
-
-   std::cout<<"Pizza with cheese\n";
-   std::cout<<cheesePizza->getPrice()<<std::endl;
-   std::cout<<cheesePizza->getName()<<std::endl;
-
-   delete cheesePizza; delete pizzaDecorator;
-   delete tg;
-   delete base;
    
-  //TESTING STRATEGY!
-  //PizzaOrder order1 = 
+   PizzaOrder *order1 = new PizzaOrder(new ExtraCheese(new StuffedCrust(base)), Regular Price);
+   std::cout<<"Price of Decorated Pizza: "<<order1->getPrice()<<endl;
+   std::cout<<"Name of Decorated Pizza: "<<order1->getName()<<endl;
+   std::cout<<"printing pizza: "<<endl;
+
+   //bulk discount
+   order1->
+
+   order1->printPizza();
+   std::cout<<"-----------------------------------------------------------------------------------------\n";
+
+   
+   //Testing the Strategy design pattern
+   PizzaOrder *orders[3];//testing three strategies
+   orders[0] = new PizzaOrder(new Regular price);
+   orders
+   double priceA = orders[0]->applyDiscount();
+
+   orders[1] = new PizzaOrder(new BulkDiscount);
+   double priceB = orders[1]->applyDiscount();
+
+   orders[2] = new PizzaOrder(new FamilyDiscount);
+   double priceC = orders[2]->applyDiscount();
+
+   std::cout<<"Prices after discount has been applied:/n";
+   std::cout<<"-----------------------------------------------------------------------------------------------\n";
+   std::cout<<"After regular price discount: "<<priceA<<std::endl;
+   std::cout<<"After bulk discount: "<<priceB<<std::endl;
+   std::cout<<"After family discount: "<<priceC<<std::endl;
+   
+   delete order1;
+   delete orders;
+   delete tg; delete base;
 
   delete t1; delete t2; delete t3; delete t4;
    delete g1; delete g2;

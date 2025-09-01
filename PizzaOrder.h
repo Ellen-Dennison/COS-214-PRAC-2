@@ -4,11 +4,16 @@
 
 class PizzaOrder{
     private:
-            int numPizza;
             Pizza *pizza;
             DiscountStrategy *strategy;
     public:
+            PizzaOrder(Pizza* p);
+            PizzaOrder(Discount* strategy);
+            void printPizza();
+            double getPrice();
+            std::string getName();
             double applyDiscount();
+            ~PizzaOrder();
 };
 
 #endif

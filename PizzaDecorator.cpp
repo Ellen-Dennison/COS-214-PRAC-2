@@ -1,5 +1,8 @@
-#include<iostream>
 #include "PizzaDecorator.h"
+
+PizzaDecorator::PizzaDecorator(Pizza* pizza){
+    this->pizza = pizza;
+}
 
 double PizzaDecorator::getPrice(){
         return pizza->getPrice();
@@ -14,6 +17,7 @@ void PizzaDecorator::printPizza(){
         return pizza->printPizza();
 }
 
-void PizzaDecorator::setPizza(Pizza* pizza){
-    this->pizza = pizza;
+PizzaDecorator::~PizzaDecorator(){
+        delete pizza;
+        pizza = nullptr;
 }

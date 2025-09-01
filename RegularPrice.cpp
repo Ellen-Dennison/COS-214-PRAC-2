@@ -1,5 +1,5 @@
 #include "RegularPrice.h"
 
 double RegularPrice::applyDiscount(){
-  return pizza->getPrice()*numPizza*1.0;
+  return pizza->getPrice()*1.0;
 }

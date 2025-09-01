@@ -1,7 +1,5 @@
 #ifndef PIZZADECORATOR_H
 #define PIZZADECORATOR_H
-
-#include<iostream>
 #include "Pizza.h"
 #include<string>
 
@@ -12,9 +10,10 @@ class PizzaDecorator:public Pizza
     Pizza *pizza;
 
     public:
+    PizzaDecorator(Pizza* p);
     virtual double getPrice();
     virtual std::string getName();
-    void setPizza(Pizza* pizza);
+    ~PizzaDecorator();
     void printPizza();
 
 };
