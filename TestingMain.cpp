@@ -4,11 +4,6 @@
 #include "VegetableGroup.h"
 #include "Topping.h"
 #include "PizzaComponent.h"
-/* 
-#include "BasePizza.h"
-#include "PizzaDecorator.h"
-#include "ExtraCheese.h" 
-*/
 #include "DraftState.h"
 #include "ReviewState.h"
 #include "FinalState.h"
@@ -17,11 +12,18 @@
 #include "Customer.h"
 #include "Menus.h"
 #include "Pizza.h"
-/*
+
+//!DECORATOR AND STRATEGY
 #include "StuffedCrust.h"
 #include "PizzaOrder.h"
-*/
+#include "BasePizza.h"
+#include "PizzaDecorator.h"
+#include "ExtraCheese.h" 
 
+#include "RegularPrice.h"
+#include "FamilyDiscount.h"
+#include "BulkDiscount.h"
+#include "DiscountStrategy.h"
 
 int main()
 {
@@ -66,7 +68,7 @@ int main()
    
 
    
-   //std::cout << "\n-----------------STATE TEST-----------------\n";
+   std::cout << "\n-----------------STATE TEST-----------------\n";
    //!STATE TEST
    State* newState = new DraftState;
    ToppingGroup* g3 = new VegetableGroup;
@@ -76,36 +78,36 @@ int main()
    g3->handle(t3);
    std::cout << g3->getName();
    
-   //std::cout << "\n----------------------------------\n";
+   std::cout << "\n----------------------------------\n";
    delete newState;
    newState = new ReviewState;
    g3->setState(newState);
    g3->handle(t1);
 
-   //std::cout << "\n----------------------------------\n";
+   std::cout << "\n----------------------------------\n";
    delete newState;
    newState = new FinalState;
    g3->setState(newState);
    g3->handle(t1);
     
-   //std::cout << "\n----------------------------------\n";
+   std::cout << "\n----------------------------------\n";
    g3->setState(newState);
    g3->add(t1);
    std::cout << g3->getName();
  
 
-   //!OTHER MEAT PIZZA
-   ToppingGroup* g2 = new MeatGroup;
-   g2->add(t1);
-   g2->add(t2);
-   g2->add(t4);
-   std::cout << g2->getName();
-   std::cout << g2->getPrice() << std::endl;
-   std::cout << "----------------------------------\n";
+    //!OTHER MEAT PIZZA
+    ToppingGroup* g2 = new MeatGroup;
+    g2->add(t1);
+    g2->add(t2);
+    g2->add(t4);
+    std::cout << g2->getName();
+    std::cout << g2->getPrice() << std::endl;
+    std::cout << "\n----------------------------------\n";
    
 
-    delete t1; delete t2; delete t3; delete t4;
-    delete g1; delete g2; //delete bp1; delete ds1;
+    
+    //delete g1; delete g2; //delete bp1; delete ds1;
     delete newState; delete g3;
 
     Observer* ob1=  new Website;
@@ -119,56 +121,61 @@ int main()
     Pizza* pineapple;
     p1->addPizza(pineapple);
 
-    //p1->notifyObserver("Website test 1");
-    //p1->notifyObserver("Website test 2"); 
+    p1->notifyObserver("Website test 1");
+    p1->notifyObserver("Website test 2"); 
 
     delete ob1;
     delete ob2;
     delete p1;
     //delete pineapple;
  
-
-    /* 
     //Testing Decorator functions
+    std::cout<<"\n-------------------------------------------------------------------------------------\n";
+    std::cout<<"Testing the decorator\n";
     ToppingGroup* tg= new VegetableGroup;
     tg->add(t1);
     tg->add(t2);
     tg->add(t3);
 
-      BasePizza *base = new BasePizza;//base pizza has toppings
+    BasePizza *base = new BasePizza;//base pizza has toppings
     base->setTopping(tg);
     
-    PizzaOrder *order1 = new PizzaOrder(new ExtraCheese(new StuffedCrust(base)), new Regular price);
-    std::cout<<"Price of Decorated Pizza: "<<order1->getPrice()<<endl;
-    std::cout<<"Name of Decorated Pizza: "<<order1->getName()<<endl;
-    std::cout<<"printing pizza: "<<endl;
+    PizzaOrder *order1 = new PizzaOrder(new ExtraCheese(new StuffedCrust(base)), new RegularPrice, 1);
+    std::cout<<"Price of Decorated Pizza: "<<order1->getPrice()<<std::endl;
+    std::cout<<"Name of Decorated Pizza: "<<order1->getName()<<std::endl;
+    std::cout<<"printing pizza: "<<std::endl;
 
     order1->printPizza();
     std::cout<<"-----------------------------------------------------------------------------------------\n";
 
     
-   //Testing the Strategy design pattern
-   double priceA = order1->applyDiscount();
+    //Testing the Strategy design pattern
+    std::cout<<"Testing the Strategy design pattern\n";
+    double priceA = order1->applyDiscount();
 
-   PizzaOrder *order2 = new PizzaOrder(new ExtraCheese(base), BulkDiscount);
-   double orderPrice = order2->getPrice()*3;
-   double priceB = orderPrice->
-   std::cout<<"Prices after discount has been applied:/n";
-   std::cout<<"-----------------------------------------------------------------------------------------------\n";
-   std::cout<<"After regular price discount: "<<priceA<<std::endl;
-   std::cout<<"After bulk discount: "<<priceB<<std::endl;
-   std::cout<<"After family discount: "<<priceC<<std::endl;
-   
-   delete order1;
-   delete orders;
-   delete tg; delete base;
+    PizzaOrder *order2 = new PizzaOrder(new ExtraCheese(base), new BulkDiscount,3);
+    
+    double priceB = order2->applyDiscount();
 
-  delete t1; delete t2; delete t3; delete t4;
-   delete g1; delete g2;
- */
+    PizzaOrder *order3 = new PizzaOrder(new StuffedCrust(base), new FamilyDiscount, 7);
+    
+    double priceC = order3->applyDiscount();
 
+    std::cout<<"Prices after discount has been applied:\n";
+    std::cout<<"-----------------------------------------------------------------------------------------------\n";
+    std::cout<<"After regular price discount: "<<priceA<<std::endl;
+    std::cout<<"After bulk discount: "<<priceB<<std::endl;
+    std::cout<<"After family discount: "<<priceC<<std::endl;
+    
+    delete order1;
+    delete order2;
+    delete order3;
+    delete tg; delete base;
 
-  return 0;
+    delete t1; delete t2; delete t3; delete t4;
+    delete g1; delete g2;
+
+    return 0;
 
 
   
