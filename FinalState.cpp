@@ -1,5 +1,7 @@
 #include <iostream>
 #include "FinalState.h"
+#include "ToppingGroup.h"
+#include "Topping.h"
 
 void FinalState::handle(ToppingGroup* Toppings,Topping* newTopping)
 {

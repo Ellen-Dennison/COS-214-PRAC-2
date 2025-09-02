@@ -4,7 +4,7 @@
 #include <vector>
 #include "PizzaComponent.h"
 #include "Topping.h"
-#include "State.h"
+class State;
 
 class ToppingGroup:public PizzaComponent
 {
@@ -22,7 +22,7 @@ class ToppingGroup:public PizzaComponent
 
    void setState(State* newState);//CHANGES
    void handle(Topping* newTopping);//CHANGES
-   ~ToppingGroup();//CHANGES
+   //~ToppingGroup();//CHANGES
 
 };
 #endif

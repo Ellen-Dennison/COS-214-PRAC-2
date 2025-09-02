@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ToppingGroup.h"
+#include "State.h"
 
 
 void ToppingGroup::add(PizzaComponent* component)
@@ -41,11 +42,3 @@ double ToppingGroup::getPrice()
 std::vector <PizzaComponent*>* ToppingGroup::getToppings()
 { return &toppings; }
 
-
-ToppingGroup::~ToppingGroup()
-{
-  
-  if(newState != NULL)
-  { delete newState; }
-
-}

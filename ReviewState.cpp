@@ -1,5 +1,7 @@
 #include <iostream>
 #include "ReviewState.h"
+#include "ToppingGroup.h"
+#include "Topping.h"
 
 
 void ReviewState::handle(ToppingGroup* Toppings ,Topping* newTopping)

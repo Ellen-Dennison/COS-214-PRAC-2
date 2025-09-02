@@ -2,7 +2,7 @@
 #define STATE_H
 #include <iostream>
 class ToppingGroup; 
-class Topping;
+class Topping;      
 
 
 class State

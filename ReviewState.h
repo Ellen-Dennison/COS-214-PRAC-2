@@ -3,8 +3,7 @@
 
 #include <iostream>
 #include "State.h"
-#include "ToppingGroup.h"
-#include "Topping.h"
+
 
 class ReviewState:public State
 { 
@@ -13,8 +12,8 @@ class ReviewState:public State
     ToppingGroup* Toppings;
     
     public:
-    void handle(ToppingGroup* Toppings,Topping* newTopping);
-    ~ReviewState();
+    virtual void handle(ToppingGroup* Toppings,Topping* newTopping) override;
+    //~ReviewState();
    
 };
 
