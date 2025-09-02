@@ -5,9 +5,9 @@
 #include "Topping.h"
 #include "PizzaComponent.h"
 /* 
-#include "BasePizza.cpp"
-#include "PizzaDecorator.cpp"
-#include "ExtraCheese.cpp" 
+#include "BasePizza.h"
+#include "PizzaDecorator.h"
+#include "ExtraCheese.h" 
 */
 #include "DraftState.h"
 #include "ReviewState.h"
@@ -18,8 +18,8 @@
 #include "Menus.h"
 #include "Pizza.h"
 /*
-#include "StuffedCrust.cpp"
-#include "PizzaOrder.cpp"
+#include "StuffedCrust.h"
+#include "PizzaOrder.h"
 */
 
 
@@ -61,21 +61,20 @@ int main()
    g1->add(t1);
    g1->add(t2);
    g1->add(t3);
-   //std::cout << g1->getName();
-   //std::cout << g1->getPrice() << std::endl;
+   std::cout << g1->getName();
+   std::cout << g1->getPrice() << std::endl;
    
 
    
    //std::cout << "\n-----------------STATE TEST-----------------\n";
-   
-   /* //!STATE TEST
+   //!STATE TEST
    State* newState = new DraftState;
    ToppingGroup* g3 = new VegetableGroup;
    g3->setState(newState);
    g3->handle(t1);
    g3->handle(t2);
    g3->handle(t3);
-   //std::cout << g3->getName();
+   std::cout << g3->getName();
    
    //std::cout << "\n----------------------------------\n";
    delete newState;
@@ -92,22 +91,22 @@ int main()
    //std::cout << "\n----------------------------------\n";
    g3->setState(newState);
    g3->add(t1);
-   //std::cout << g3->getName();
- */
+   std::cout << g3->getName();
+ 
 
    //!OTHER MEAT PIZZA
    ToppingGroup* g2 = new MeatGroup;
    g2->add(t1);
    g2->add(t2);
    g2->add(t4);
-   //std::cout << g2->getName();
-   //std::cout << g2->getPrice() << std::endl;
-   //std::cout << "----------------------------------\n";
+   std::cout << g2->getName();
+   std::cout << g2->getPrice() << std::endl;
+   std::cout << "----------------------------------\n";
    
 
     delete t1; delete t2; delete t3; delete t4;
     delete g1; delete g2; //delete bp1; delete ds1;
-    //delete newState; delete g3;
+    delete newState; delete g3;
 
     Observer* ob1=  new Website;
     Observer* ob2 = new Customer;

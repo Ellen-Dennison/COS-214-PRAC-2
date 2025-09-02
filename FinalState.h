@@ -11,8 +11,8 @@ class FinalState:public State
     ToppingGroup* Toppings;
     
     public:
-    virtual void handle(ToppingGroup* Toppings, Topping* newTopping) override;
-    //~FinalState();
+    void handle(ToppingGroup* Toppings, Topping* newTopping) override;
+    
 };
 
 #endif

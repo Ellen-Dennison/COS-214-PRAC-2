@@ -12,7 +12,7 @@ class ReviewState:public State
     ToppingGroup* Toppings;
     
     public:
-    virtual void handle(ToppingGroup* Toppings,Topping* newTopping) override;
+    void handle(ToppingGroup* Toppings,Topping* newTopping) override;
     //~ReviewState();
    
 };

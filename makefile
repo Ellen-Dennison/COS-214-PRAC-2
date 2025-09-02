@@ -1,8 +1,8 @@
 main: *.o
 	g++ -std=c++11 -o main *.o
 
-*.o: TestingMain.cpp Topping.cpp ToppingGroup.cpp Menus.cpp Website.cpp Customer.cpp DraftState.cpp ReviewState.cpp FinalState.cpp VegetableGroup.cpp MeatGroup.cpp PizzaMenu.cpp
-	g++ -c TestingMain.cpp Topping.cpp ToppingGroup.cpp Menus.cpp Website.cpp Customer.cpp DraftState.cpp ReviewState.cpp FinalState.cpp VegetableGroup.cpp MeatGroup.cpp PizzaMenu.cpp
+*.o: *.cpp
+	g++ -c *.cpp
 
 run: main
 	./main

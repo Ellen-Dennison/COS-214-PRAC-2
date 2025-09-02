@@ -12,8 +12,8 @@ class DraftState:public State
     ToppingGroup* Toppings;
     
     public:
-    virtual void handle(ToppingGroup* Toppings, Topping* newTopping) override;
-    //~DraftState();
+    void handle(ToppingGroup* Toppings, Topping* newTopping) override;
+   
    
 };
 

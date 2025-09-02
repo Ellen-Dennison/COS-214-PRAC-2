@@ -5,7 +5,7 @@
 class SpecialsMenu:public Menus
 {
     public:
-    void notifyObserver(std::string message);
+    void notifyObserver(std::string message) override;
 
 };
 
